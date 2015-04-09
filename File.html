@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>File Demo</title>
+<link href="css/file.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<form id="frmFile">
+<fieldset>
+<legend>选择多个文件</legend>
+<input name="file" type="file" multiple="multiple" onChange="fileIpload_GetFileList(this.files);">
+<input type="submit" >
+<p>当你浏览文件时，请尝试浏览多个文件</p>
+<ul id="ulUplaod"></ul>
+</fieldset>
+
+<script type="text/javascript">
+function $$(id) {
+    return document.getElementById(id);
+}
+
+function fileIpload_GetFileList(f)
+{
+    var strLi="<li class='headli'>";
+    strLi=strLi+"<span>文件名称</span>";
+    strLi=strLi+"<span>文件类型</span>";
+    strLi=strLi+"<span>文件大小</span>";
+    strLi=strLi+"</li>";
+
+    for(var intI=0;intI<f.length;intI++)
+    {
+        var tmpFile=f[intI];
+        strLi=strLi+"<li>";
+        strLi=strLi+"<span>"+tmpFile.name+"</span>";
+        strLi=strLi+"<span>"+tmpFile.type+"</span>";
+        strLi=strLi+"<span>"+tmpFile.size+"KB</span>";
+        strLi=strLi+"</li>";
+    }
+    $$("ulUplaod").innerHTML=strLi;
+}
+</script>
+
+<!--H5中通过接口FileRdead读取文本、二进制、图片文件-->
+<fieldset>
+<legend>预览图片</legend>
+<input name="file" type="file" multiple="multiple" onChange="fileIpload_GPreImageFile(this.files);" accept="image/jpg">
+<input type="submit" >
+<p>当你浏览文件时，请尝试浏览多个文件</p>
+<ul id="uiUpload"></ul>
+</fieldset>
+
+<script type="text/javascript">
+function fileIpload_GPreImageFile(f)
+{
+   if(typeof FileReader=="undefined"){
+    alert("检查到您的浏览器不支持FileReader对象！")
+   }
+
+   var strHTML="";
+   for(var intI=0;intI<f.length;intI++)
+   {
+    var tmpFile=f[intI];
+    var reader=new FileReader();
+    reader.readAsDataURL(tmpFile);//以数据URL的方式读取文件内容
+    reader.onload=function(e)
+    {
+        strHTML=strHTML+"<span>";
+        strHTML=strHTML+"<img src='"+e.target.result+"' alt=''/>";
+        strHTML=strHTML+"</span>";
+        $$("uiUpload").innerHTML="<li>"+strHTML+"</li>";
+    }
+   }
+}
+</script>
+
+<fieldset class="txtFS">
+<legend>读取文本文件</legend>
+<input name="file" type="file" multiple="multiple" onChange="fileIpload_ReatTxtFile(this.files);" accept="txt">
+<input type="submit" >
+<p>当你浏览文件时，请尝试浏览多个文件</p>
+<ul id="artShow"></ul>
+</fieldset>
+
+<script type="text/javascript">
+function fileIpload_ReatTxtFile(f)
+{
+   if(typeof FileReader=="undefined"){
+    alert("检查到您的浏览器不支持FileReader对象！")
+   }
+
+   var strHTML="";
+   for(var intI=0;intI<f.length;intI++)
+   {
+    var tmpFile=f[intI];
+    var reader=new FileReader();
+    reader.readAsText(tmpFile);//将文件以文本编码的形式读取
+    reader.onload=function(e)
+    {
+        $$("artShow").innerHTML="<pre>"+e.target.result+"</pre>";
+    }
+   }
+}
+</script>
+</form>
+</body>
+</html>

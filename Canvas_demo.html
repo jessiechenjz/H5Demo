@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>通过路径画圆形</title>
+<link href="css/canvas_demo.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" language="jscript"
+        src="js/canvas_demo.js"/>
+</script>
+</head>
+<body onload="drawRect();">
+    <fieldset>
+    <legend>绘制不同的圆</legend>
+     <div><p>
+    <span onClick="spn1_click();">实体圆</span>
+    <span onClick="spn2_click();">边框圆</span>
+    <span onClick="spn3_click();">衔接圆</span></p>
+    <canvas id="cnvMain1" width="280px" height="190px"></canvas>
+   </div>
+    </fieldset>
+
+
+     <fieldset>
+    <legend>绘制渐变的圆</legend>
+     <canvas id="cnvMain2" width="280px" height="190px"></canvas>
+    </fieldset>
+
+     <fieldset>
+    <legend>移动，缩放，旋转</legend>
+     <div><p>
+    <span onClick="spn4_click();">移动</span>
+    <span onClick="spn5_click();">缩放</span>
+    <span onClick="spn6_click();">旋转</span></p>
+    <canvas id="cnvMain3" width="280px" height="190px"></canvas>
+   </div>
+    </fieldset>
+
+
+     <fieldset>
+    <legend>绘制花朵</legend>
+    <h1>使用canvas元素绘制美丽的花朵</h1>
+花的类型：
+<select id="drawType">
+    <option value="1">蓬莱菊</option>
+    <option value="2">令箭荷花</option>
+    <option value="3">大丽花</option>
+</select>
+<input type="button" id="btn" value="绘制" onclick="btn_onclick()"/><br/>
+<canvas id="canvas" width="200px" height="200px"></canvas>
+
+    </fieldset>
+
+     <fieldset>
+    <legend>绘制不同的圆</legend>
+    </fieldset>
+</body>
+</html>

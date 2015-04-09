@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>使用progress元素</title>
+<style type="text/css">
+body {
+    font-size:12px
+}
+p {
+    padding:0px;
+    margin:0px
+}
+.inputbtn {
+    border:solid 1px #ccc;
+    background-color:#eee;
+    line-height:18px;
+    font-size:12px
+}
+</style>
+</head>
+<body>
+  <fieldset>
+<legend>下载预览</legend>
+ <p id="pTip">开始下载</p>
+ <progress value="0" max="100" id="proDownFile"></progress>
+ <input type="button" value="下载按钮"
+        class="inputbtn" onClick="Btn_Click();">
+<script type="text/javascript">
+  var intValue = 0;
+  var intTimer;
+  var objPro = document.getElementById('proDownFile');
+  var objTip = document.getElementById('pTip');
+  //定时事件
+  function Interval_handler() {
+    intValue++;
+    objPro.value = intValue;
+    if (intValue >= objPro.max) {
+        clearInterval(intTimer);
+        objTip.innerHTML = "恭喜你，下载已经完成！";
+    } else {
+        objTip.innerHTML = "请耐心等待，正在下载中" + intValue + "%";
+    }
+  }
+  //下载按钮点击事件
+  function Btn_Click(){
+     intTimer = setInterval(Interval_handler, 100);
+  }
+</script>
+</fieldset>
+
+<fieldset>
+<legend>投票预览</legend>
+ <p>共有200人参与投票,明细如下：</p>
+  <p>西门吹雪：
+  <meter value="0.30" optimum="1"
+         high="0.9" low="1" max="1" min="0">
+  </meter>
+  <span> 30% </span></p>
+  <p>东方不败：
+  <meter value="70" optimum="100"
+         high="90" low="10" max="100" min="0">
+  </meter>
+  <span> 70% </span></p>
+</fieldset>
+</body>
+</html>

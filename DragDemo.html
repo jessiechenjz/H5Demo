@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>fragdemo</title>
+<style type="text/css">
+body{
+    font-size: 84%;
+}
+.dustbin{
+    width: 100px;
+    height: 260px;
+    line-height: 1.4;
+    background-color: gray;
+    font-size: 36px;
+    font-family: "微软雅黑，“Yahei Mono";
+    text-align: center;
+    text-shadow:-1px -1px #bbb;
+    float: left;
+}
+.dragbox{
+    width: 500px;
+    padding-left: 20px;
+    float: left;
+}
+.draglist{
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 2px dashed #ccc;
+    background-color: #eee;
+    cursor: move;
+}
+.draglist:hover{
+    border-color: #cadeeb;
+    background-color: #f0f3f9;
+}
+.dragremind{
+    padding-top: 2em;
+    clear: both;
+}
+</style>
+</head>
+
+<body>
+<div class="dustbin"><br/>A<br/>B<br/>C</div>
+<div class="dragbox">
+<div class="draglist" title="AA" draggable="true">AAA1</div>
+<div class="draglist" title="BB" draggable="true">AAA2</div>
+<div class="draglist" title="CC" draggable="true">AAA3</div>
+<div class="draglist" title="DD" draggable="true">AAA4</div>
+<div class="draglist" title="EE" draggable="true">AAA5</div>
+<div class="draglist" title="FF" draggable="true">AAA6</div>
+</div>
+<div class="dragremind"></div>
+
+<script type="text/javascript">
+var $=function(selector)
+{
+    /*简单的选择器方法*/
+}
+//var eleDustbin=$(".dustbin")[0],eleDrags=$(".draglist"),1Drags=eleDrags.length,
+</script>
+</body>
+</html>

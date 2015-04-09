@@ -1,0 +1,48 @@
+@charset "utf-8"
+body{
+    font-size: 12px;
+    float: left;
+}
+fieldset{
+    padding:10px;
+    /*width:400px;*/
+    float: left;
+}
+p{
+    clear:both;
+    padding: 0px;
+    margin: 10px;
+}
+#spnColor{
+    width: 150px;
+    float: left;
+}
+#spnPrev{
+    width: :100px;
+    height: 70px;
+    border: solid 1px #CCC;
+    float: right;
+}
+#pColor{
+    font-weight: bold;
+    clear: both;
+    text-align: center;
+}
+#ulUplaod{
+    float: center;
+    text-align: center;
+
+}
+#ulUplaod span{
+    width: 200px;
+    padding:10px;
+}
+.headli{
+    background-color: #EEE;
+}
+.txtFS{
+    width: 600px;
+    padding:10px;
+    float: left;
+}
+

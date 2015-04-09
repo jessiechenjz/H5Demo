@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>H5 demo</title>
+<link href="css/css.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/changecolor.js">
+</script>
+</head>
+
+<body>
+<form id="frmTmp">
+<fieldset>
+<legend>请选择颜色值：</legend>
+<span id="spnColor">
+<input id="txR" type="range" value="0" min="0" max="255" onChange="setSpanColor()">
+<input id="txG" type="range" value="0" min="0" max="255" onChange="setSpanColor()">
+<input id="txB" type="range" value="0" min="0" max="255" onChange="setSpanColor()">
+</span>
+<span id="spnPrev">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p id="pColor">rgb(0,0,0)</p>
+</fieldset>
+
+</body>
+</html>

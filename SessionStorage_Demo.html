@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>使用sessionStorage</title>
+<link href="css/storage.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+ <fieldset>
+   <legend>sessionStorage对象保存与读取临时数据</legend>
+   <input name="txtName" type="text" class="inputtxt"
+          onChange="txtName_change(this);" size="30px">
+   <input name="btnGetValue" type="button" class="inputbtn"
+          onClick="btnGetValue_click();" value="读取">
+   <p id="pStatus"></p>
+ </fieldset>
+ <script type="text/javascript">
+ // JavaScript Document
+function $$(id) {
+    return document.getElementById(id);
+}
+//输入文本框内容时调用的函数
+function txtName_change(v) {
+    var strName = v.value;
+    sessionStorage.setItem("strName", strName);
+    $$("pStatus").style.display = "block";
+    $$("pStatus").innerHTML = sessionStorage.getItem("strName");
+}
+//点击“读取”按钮时调用的函数
+function btnGetValue_click() {
+    $$("pStatus").style.display = "block";
+    $$("pStatus").innerHTML = sessionStorage.getItem("strName");
+}</script>
+</body>
+</html>
